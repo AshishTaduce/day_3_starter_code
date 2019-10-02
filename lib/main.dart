@@ -12,63 +12,83 @@ void main() {
         ),
         //body: Center(child: Text('Have a productive day!')),
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/profilepic.jpg'),
-                  radius: 100,
-                ),
-                Text(
-                  'Ashish Teddy',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                      fontFamily: 'Lobster',
-
-                  ),
-                ),
-                Text(
-                  '_____',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20
-                  ),
-
-                ),
-
-                Text(
-                    'Flutter Developer',
-                  style: TextStyle(
-                    color: Colors.white,
-                    letterSpacing: 5,
-                    fontSize: 20,
-                  ),
-                ),
-                Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/profilepic.jpg'),
+                radius: 75,
+              ),
+              Text(
+                'Ashish Teddy',
+                style: TextStyle(
                   color: Colors.white,
-                  padding: EdgeInsets.all(value),
-                  child: Container(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-
-                      children: <Widget>[
-                      Icon(
-                        Icons.call, color: Colors.grey,
-                      ),
-                        Text('+91 48156 55665'),
-                      ],
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Lobster',
+                ),
+              ),
+              Text(
+                '_____',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              Text(
+                'Flutter Developer',
+                style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 5,
+                  fontSize: 20,
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.all(20),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.call,
+                      color: Colors.grey,
+                    ),
+                    title: Text(
+                      '+91 65456 78556',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    trailing: IconButton(
+                      icon: Icon(Icons.content_copy),
+                      onPressed: contentCopy,
                     ),
                   ),
-                )
-              ],
-            ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.all(20),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.mail,
+                      color: Colors.grey,
+                    ),
+                    title: Text(
+                      'ashishteddy@gmail.com',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    trailing: IconButton(
+                      icon: Icon(Icons.content_copy),
+                      onPressed: contentCopy,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
     ),
   );
+}
+
+void contentCopy() {
+  print('Content Copied.');
 }

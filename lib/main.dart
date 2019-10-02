@@ -9,6 +9,22 @@ void main() {
           centerTitle: true,
           backgroundColor: Colors.red.shade100,
           title: Text('Business Card'),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.share),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                print('Share Was Pressed.');
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.refresh),
+              tooltip: 'Next page',
+              onPressed: () {
+                print('Share Was Pressed.');
+              },
+            ),
+          ],
         ),
         //body: Center(child: Text('Have a productive day!')),
         body: Center(
